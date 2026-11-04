@@ -487,3 +487,15 @@ h1 span:last-child{animation-delay:.08s}
 .cid-logo{display:block;width:min(250px,72%);height:auto;margin:4px 0 14px}
 .job h2{padding-right:40px}
 .cid-ticks{margin-top:14px}
+.tile-cta{display:flex;align-items:center;gap:12px;min-height:56px;margin-top:16px;padding:8px 12px 8px 10px;border-radius:16px;background:var(--tint);color:var(--ink);transition:transform .28s var(--spring),background .2s}
+.tile-cta:active{transform:scale(.97)}
+.cta-ic{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:#fff;color:var(--blue);font-size:22px;flex:none}
+.cta-t{display:flex;flex-direction:column;min-width:0;flex:1}
+.cta-t b{font-size:15px;line-height:20px;font-weight:600}
+.cta-t small{font-size:13px;line-height:18px;color:var(--mute);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cta-go{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--blue);color:#fff;font-size:15px;flex:none}
+.tile-cta.dark{background:rgba(255,255,255,.12);color:#fff}
+.tile-cta.dark .cta-ic{background:rgba(255,255,255,.14);color:#fff}
+.tile-cta.dark small{color:#C5CDB9}
+.tile-cta.dark .cta-go{background:#fff;color:var(--night)}
+.venture .lead,.job h2{padding-right:0}

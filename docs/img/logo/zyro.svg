@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="64" viewBox="0 0 220 64" fill="none">
+  <rect x="4" y="20" width="28" height="26" rx="7" fill="#20D39B"/>
+  <rect x="10" y="28" width="16" height="10" rx="2" fill="#19304F"/>
+  <circle cx="14" cy="33" r="2.5" fill="#FFFFFF"/>
+  <circle cx="22" cy="33" r="2.5" fill="#FFFFFF"/>
+  <path d="M18 20V12" stroke="#20D39B" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="18" cy="10" r="4" fill="#20D39B"/>
+  <text x="44" y="43" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800" fill="#1A2B4A">Zyro</text>
+</svg>

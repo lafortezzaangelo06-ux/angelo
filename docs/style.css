@@ -477,3 +477,13 @@ h1 span:last-child{animation-delay:.08s}
 .sport-photo{aspect-ratio:3/2;object-position:50% 50%}
 .end .facts{padding-bottom:16px}
 @media (prefers-reduced-motion:reduce){.match .hit{stroke-dashoffset:0}}
+.hg-logo{margin:4px 0 12px;border-radius:18px;overflow:hidden;aspect-ratio:1000/577;background:#0E161A}
+.hg-logo img{display:block;width:100%;height:100%;object-fit:cover}
+.run .hg-logo img{animation:hgBreath 9s ease-in-out infinite alternate}
+@keyframes hgBreath{from{transform:scale(1)}to{transform:scale(1.06)}}
+.night .tile-link{z-index:2;top:16px;right:16px}
+.night .lead{padding-right:0}
+.job .tile-link{color:var(--blue)}.job .tile-link:before{background:var(--tint)}
+.cid-logo{display:block;width:min(250px,72%);height:auto;margin:4px 0 14px}
+.job h2{padding-right:40px}
+.cid-ticks{margin-top:14px}

@@ -133,6 +133,6 @@
   new IntersectionObserver(function(es){
     var show=!es[0].isIntersecting;
     dock.classList.toggle('on',show);dock.setAttribute('aria-hidden',show?'false':'true');
-    $$('a',dock).forEach(function(a){show?a.removeAttribute('tabindex'):a.setAttribute('tabindex','-1')});
+    $$('a,button',dock).forEach(function(a){show?a.removeAttribute('tabindex'):a.setAttribute('tabindex','-1')});
   }).observe(document.querySelector('.panel'));
 })();

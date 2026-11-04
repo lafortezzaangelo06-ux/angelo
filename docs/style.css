@@ -492,3 +492,11 @@ h1 span:last-child{animation-delay:.08s}
 .tile-banner:active{transform:scale(.97)}
 .tile-banner.dark{background:#fff;color:var(--night);box-shadow:0 8px 20px rgba(0,0,0,.35)}
 .venture .lead,.job h2{padding-right:0}
+button.cv{width:100%;border:0;font:inherit;text-align:left;cursor:pointer}
+button.dock-btn{border:0;font:inherit;cursor:pointer}
+.cv-preview{display:block;margin:14px auto 16px;width:min(220px,52vw);border-radius:6px;overflow:hidden;box-shadow:0 0 0 1px var(--line),0 10px 28px rgba(20,30,16,.18)}
+.cv-preview img{display:block;width:100%;height:auto}
+.cv-actions{display:grid;gap:8px}
+.sheet-btn{gap:8px;grid-auto-flow:column;align-items:center;justify-content:center}
+.sheet-btn .i{font-size:19px}
+.sheet-btn.ghost{background:var(--tint);color:var(--blue)}

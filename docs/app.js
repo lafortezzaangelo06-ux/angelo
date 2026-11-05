@@ -136,3 +136,21 @@
     $$('a,button',dock).forEach(function(a){show?a.removeAttribute('tabindex'):a.setAttribute('tabindex','-1')});
   }).observe(document.querySelector('.panel'));
 })();
+
+/* CV download that really saves the file: share sheet on phones (Save to Files), forced download elsewhere */
+(function(){
+  var btn=document.getElementById('cv-dl');if(!btn)return;
+  var url=btn.getAttribute('href'),name=btn.getAttribute('download')||'CV.pdf',file=null,label=document.getElementById('cv-dl-t');
+  var touch=matchMedia('(pointer:coarse)').matches;
+  function load(){if(file||!window.fetch)return;fetch(url,{cache:'force-cache'}).then(function(r){return r.ok?r.blob():null}).then(function(b){if(b)file=new File([b],name,{type:'application/pdf'})}).catch(function(){})}
+  document.querySelectorAll('[data-open="sheet-cv"]').forEach(function(o){o.addEventListener('click',load)});
+  if('requestIdleCallback' in window)requestIdleCallback(load);else setTimeout(load,2500);
+  var canShare=function(){try{return touch&&file&&navigator.canShare&&navigator.canShare({files:[file]})}catch(e){return false}};
+  if(touch&&navigator.canShare&&label)label.textContent='Save CV to your phone';
+  function save(blob){var u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(u);a.remove()},4000)}
+  btn.addEventListener('click',function(ev){
+    if(canShare()){ev.preventDefault();navigator.share({files:[file],title:name}).catch(function(e){if(e&&e.name!=='AbortError')save(file)});return}
+    if(file){ev.preventDefault();save(file);return}
+    if(window.fetch){ev.preventDefault();fetch(url).then(function(r){return r.blob()}).then(save).catch(function(){location.href=url})}
+  });
+})();
